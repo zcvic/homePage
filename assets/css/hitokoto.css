@@ -1,0 +1,68 @@
+@keyframes typing {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes content-slide-in {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 13ch;
+    }
+}
+
+.hitokoto {
+    /* margin: 1.2rem auto 0; */
+    color: #eee;
+    font-weight: 600;
+}
+
+.hitokoto-text {
+    position: relative;
+    padding: 0.8rem 2.5rem;
+    text-align: center;
+}
+
+.hitokoto-text::before {
+    content: "『";
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+}
+
+.hitokoto-text::after {
+    content: "』";
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+}
+
+.hitokoto-text span {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.hitokoto-text span::after {
+    content: "|";
+    font-size: 0.8rem;
+    animation: typing 0.8s infinite;
+}
+
+.hitokoto-author {
+    /* margin-top: 0.1rem; */
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+    text-align: end;
+    transition: opacity var(--transform-transition);
+}
